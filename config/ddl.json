@@ -1,0 +1,31 @@
+{
+    "TableName": "table", 
+    "KeySchema": [
+        {
+            "KeyType": "HASH", 
+            "AttributeName": "Id"
+        }, 
+        {
+            "KeyType": "RANGE", 
+            "AttributeName": "Code"
+        }
+    ], 
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "Id", 
+            "AttributeType": "S"
+        }, 
+        {
+            "AttributeName": "Code", 
+            "AttributeType": "S"
+        }
+    ],
+    "ProvisionedThroughput": {
+        "WriteCapacityUnits": 5,
+        "ReadCapacityUnits": 5
+    },
+    "StreamSpecification": {
+        "StreamEnabled": true,
+        "StreamViewType": "NEW_IMAGE"
+    }
+}
